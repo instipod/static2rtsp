@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install ffmpeg -y && rm -rf /var/cache/apt/archive
 COPY requirements.txt /tmp/requirements.txt
 RUN cd /tmp && pip3 install -r requirements.txt && rm /tmp/requirements.txt
 
-COPY main.py /usr/local/bin/main.py
+COPY static2rtsp.py /usr/local/bin/main.py
 RUN chmod a+x /usr/local/bin/main.py
 
 ENV PYTHONUNBUFFERED=1
